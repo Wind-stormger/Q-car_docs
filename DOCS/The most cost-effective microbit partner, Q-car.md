@@ -6,7 +6,7 @@
 
 <div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/microbitV2_front_view.jpg" width="75%"></div>
 
-micro:bit下端有一排专为拓展更多外部设备而设计的金姆指接口，只需将它插上Q-car，你就能一次性连接到多种外设：
+micro:bit下端有一排专为拓展更多外部设备而设计的金手指接口，只需将它插上Q-car，你就能一次性连接到多种外设：
 - 超声波测距传感器
 - 循迹传感器
 - 红外发射器与接收器
