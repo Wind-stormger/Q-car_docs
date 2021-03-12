@@ -2,7 +2,7 @@
 
 <div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/Q-car_side_view.jpg" width="75%"></div>
 
-如果你手中已经有一块micro:bit而且已经把玩过一阵子，你一定已经不再满足于使用micro:bit自带的基础设备。
+如果你手中已经有一块micro:bit而且已经把玩过一阵子，你或许已经不再满足于使用micro:bit自带的基础设备。
 
 <div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/microbitV2_front_view.jpg" width="75%"></div>
 
