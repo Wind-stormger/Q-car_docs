@@ -3,10 +3,10 @@
 MakeCode图形编程对初学者是极其友好的，相较于（code）代码这样由抽象的字符组合来表达程序逻辑，图形化的（blocks）积木非常利于人从视觉上认知和了解程序的基本逻辑，这可以很大程度上减少人在接触编程时直觉感受到的阻碍，低门槛的入门加上平滑的难度进阶，再过渡到代码编程时就能自然的以从图形编程中学会的知识为逻辑基础，即可有效降低抵触心理，增强自我学习的信心。  
 
 现在我们打开MakeCode，安装上Qcar扩展积木，即可开始编写用于控制Qcar的程序。  
-
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode2.png" width="100%"></div>
 在basic选项栏中，有一个“on start”积木，这是一个在主程序刚启动或复位时运行的事件处理程序，即启动和复位时就会立即执行它内部的程序。
-
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode4.png" width="50%"></div>
 在input选项栏中，有一个“on button A pressed”积木，这是一个(event handler)事件处理程序，当指定的事件（按钮A被按过）发生时，就执行它内部的程序。
-
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode5.png" width="50%"></div>
 将想要用的积木拖拽出来放置在编辑区即可使用。例如：
-
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode3.png" width="50%"></div>
