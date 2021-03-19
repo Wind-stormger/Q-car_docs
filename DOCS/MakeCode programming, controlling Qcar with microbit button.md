@@ -17,3 +17,6 @@ MakeCode图形编程对初学者是极其友好的，相较于（code）代码�
 从上图中可以很轻易了解程序中实现了什么功能，主程序刚启动或复位时，初始化Q-Car的电机（init the motor），有三个事件处理程序，在按钮A按下后，让Q-Car前进（Let the Q-Car go foward），在按钮B按下后，让Q-Car后退（Let the Q-Car go back），在按钮AB同时被按下后，让Q-Car停下（Let the Q-Car stop）。
 
 没有任何（code）代码编程经验的人也能轻易通过积木之间的嵌套关系以及积木上直白的功能描述了解整个程序的逻辑。
+
+将程序下载到micro:bit里,插入Q-Car插槽，接通电源，即可实现对应程序功能。
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/Q-car_side_view.jpg" width="75%"></div>
