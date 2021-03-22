@@ -1,4 +1,4 @@
-# 高性价比的micro:bit搭档:Q-car
+# 高性价比的micro:bit搭档:Q-Car
 
 <div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/Q-car_side_view.jpg" width="75%"></div>
 
