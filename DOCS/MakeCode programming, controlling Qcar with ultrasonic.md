@@ -33,3 +33,5 @@ Q-Car在MakeCode中的扩展积+木中有一个"read ultrasonic sensor(cm)"积�
 <div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode13.png" width="100%"></div>
 无限循环这个过程。
 <div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode6.png" width="75%"></div>
+
+修改对应数值可以调整小车与前方障碍物所需要保持的距离和车轮转速。
