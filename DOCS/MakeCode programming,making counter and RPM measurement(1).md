@@ -25,4 +25,8 @@
 "running time(ms)"积木会获取程序从启动或复位以来至读取这个积木为止的时间，单位为毫秒，即获取从开机到现在所经过的时间。我们设计一个if条件判断，用和前文类似的方法，加入一个变量用于储存上次满足条件的时间，然后设置判断条件为当前时间减去上次满足条件时的时间大于等于100毫秒时执行一次内部积木，向串口输出AB按钮的计数值然后使变量储存此次满足条件的时间，在"while true"循环内无限循环执行条件判断实现间隔100ms向串口输出一次计数值的功能。
 
 ## 2.Q-Car的车轮与红外对管
-
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/Q-car_wheel_1.jpg" width="100%"></div>
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/Q-car_wheel_2.jpg" width="100%"></div>
+在Q-Car上有一对D字轴橡胶车轮，带有12线编码盘，在底部紧贴码盘的位置放置了红外对管用于采集编码盘的信息。
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/Infrared_tube_pair.png" width="25%"></div>
+红外对管一侧发射红外光，一侧接收红外光，接收端将反射回的光线强弱的信息转化为电压高低的信号，
