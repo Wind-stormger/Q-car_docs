@@ -1,5 +1,6 @@
-# MakeCode编程：制作计数器与转速测量
+# MakeCode编程：制作计数器与转速测量(1)
 
+## 1.micro:bit 按钮计数器
 在MakeCode的原始积木中有判断micro:bit的AB俩按钮是否被按下的积木"button A is pressed"，但没有记录按钮被按下多少次的积木，我们可以自己设计一套程序来实现这样的“计数器”功能。
 
 我们可以先拆分出为了达成“计数”的目的而需要完成的每一个动作与状态。
@@ -17,8 +18,11 @@
 
 <div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode15.png" width="100%"></div>
 
-“while true”循环内的积木会无限循环执行，所以"Counter"函数会被循环执行实现持续计数的功能。
+"while true"循环内的积木会无限循环执行，所以"Counter"函数会被循环执行实现持续计数的功能。
 
-"serial write number"积木可以向USB串口传输数据，将micro:bit通过USB线与电脑连接，即可在MakeCode的控制台或是其他串口工具上读取到数据。
+"serial write number"积木可以向USB串口传输数据，将micro:bit通过USB线与电脑连接，即可在MakeCode的控制台或是其他串口工具上读取到数据。在其中添加AB按钮的计数值的变量即可实时在控制台看到各自的计数值。
 
-"running time(ms)"积木会获取程序从启动或复位以来至读取这个积木为止的时间，单位为毫秒，即获取从开机到现在所经过的时间。我们设计一个if条件判断，用和前文类似的方法，加入一个变量用于储存上次满足条件的时间，
+"running time(ms)"积木会获取程序从启动或复位以来至读取这个积木为止的时间，单位为毫秒，即获取从开机到现在所经过的时间。我们设计一个if条件判断，用和前文类似的方法，加入一个变量用于储存上次满足条件的时间，然后设置判断条件为当前时间减去上次满足条件时的时间大于等于100毫秒时执行一次内部积木，向串口输出AB按钮的计数值然后使变量储存此次满足条件的时间，在"while true"循环内无限循环执行条件判断实现间隔100ms向串口输出一次计数值的功能。
+
+## 2.Q-Car的车轮与红外对管
+
