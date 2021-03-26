@@ -27,6 +27,21 @@
 ## 2.Q-Car的车轮与红外对管
 <div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/Q-car_wheel_1.jpg" width="100%"></div>
 <div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/Q-car_wheel_2.jpg" width="100%"></div>
-在Q-Car上有一对D字轴橡胶车轮，带有12线编码盘，在底部紧贴码盘的位置放置了红外对管用于采集编码盘的信息。
+在Q-Car上有一对D字轴橡胶车轮，带有12线编码盘，在底部紧贴编码盘的位置放置了红外对管用于采集编码盘的信息。
 <div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/Infrared_tube_pair.png" width="25%"></div>
-红外对管一侧发射红外光，一侧接收红外光，接收端将反射回的光线强弱的信息转化为电压高低的信号，
+红外对管一侧发射红外光，一侧接收红外光，接收端将反射回的光线强弱的信息转化为电压高低的信号。
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode18.png" width="50%"></div>
+与右车轮的编码盘紧贴的红外对管与micro:bit的P5引脚相连，P5引脚高电平时等效于按钮A被按下，低电平等效于按钮A被松开。
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode19.png" width="50%"></div>
+左轮的编码盘紧贴的红外对管与micro:bit的P11引脚相连，P11引脚高电平时等效于按钮B被按下，低电平等效于按钮B被松开。  
+
+Q-Car的扩展积木中有一个"Set the infrared status to (on)"积木可以控制Q-Car上的红外对管启动或关闭。  
+在MakeCode中，我们先调用"Set the infrared status to (on)"积木启动红外对管，然后将前文中的用于判断按钮A是否被按下的"if"条件判断放置在"while"循环中：
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode16.png" width="100%"></div>
+这其中串口输出改为了"serial wite line"积木，可以输出文本和数字，在"while"循环中间隔100ms输出一次"A_was_pressed"变量的状态"true"或"false"。
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/Q-car_wheel_3.jpg" width="100%"></div>
+将程序下载进micro:bit，然后保持USB串口连接，将micro:bit插入Q-Car的插槽，旋转右轮使编码盘的凹口对向红外对管，此时检查串口输出信息，可以看到"false"
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/Q-car_wheel_4.jpg" width="100%"></div>
+旋转右轮使编码盘的凸柱对向红外对管，此时检查串口输出信息，可以看到"true"  
+
+显然，我们可以利用红外对管对左右两轮的编码盘进行计数了。但是，当快速转动车轮的时候，会发现串口输出的"A_was_pressed"变量的状态不发生改变了。这是因为"button A is pressed"积木内有一个消除抖动的功能，当检测到按钮A被按下超过一定时间程序才会判定按钮A被按下。
