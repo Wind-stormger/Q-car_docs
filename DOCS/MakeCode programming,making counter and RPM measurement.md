@@ -1,4 +1,4 @@
-# MakeCode编程：制作计数器与转速测量(1)
+# MakeCode编程：制作计数器与转速测量
 
 ## 1.micro:bit 按钮计数器
 在MakeCode的原始积木中有判断micro:bit的AB俩按钮是否被按下的积木"button A is pressed"，但没有记录按钮被按下多少次的积木，我们可以自己设计一套程序来实现这样的“计数器”功能。
