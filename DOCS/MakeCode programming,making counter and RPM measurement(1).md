@@ -44,4 +44,11 @@ Q-Car的扩展积木中有一个"Set the infrared status to (on)"积木可以控
 <div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/Q-car_wheel_4.jpg" width="100%"></div>
 旋转右轮使编码盘的凸柱对向红外对管，此时检查串口输出信息，可以看到"true"  
 
-显然，我们可以利用红外对管对左右两轮的编码盘进行计数了。但是，当快速转动车轮的时候，会发现串口输出的"A_was_pressed"变量的状态不发生改变了。这是因为"button A is pressed"积木内有一个消除抖动的功能，当检测到按钮A被按下超过一定时间程序才会判定按钮A被按下。
+## 3.Q-Car车轮的编码盘计数器
+显然，我们可以利用红外对管对左右两轮的编码盘进行计数了。但是，当快速转动车轮的时候，会发现串口输出的"A_was_pressed"变量的状态不发生改变了。这是因为"button A is pressed"积木内有一个消除抖动的功能，当检测到按钮A被按下超过一定时间程序才会判定按钮A被按下，而车轮带动编码盘快速旋转时，红外对管所输出的高电平信号持续时间会低于消抖的判断时间，就无法被"button A is pressed"积木识别为"true"了。
+
+所以为了使程序在车轮快速转动时也能正常计数，根据前文所述的P5,P11引脚和A,B按钮的关系，我们可以将计数器程序里的积木做出相应的修改：
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode17.png" width="100%"></div>
+"digital read pin P5"积木即读取P5引脚的数字量信号0或1，对应其低电平或高电平。而"on start"内的主程序则可以无需改动，这也正是"function"函数积木的好处。
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode15.png" width="100%"></div>
+
