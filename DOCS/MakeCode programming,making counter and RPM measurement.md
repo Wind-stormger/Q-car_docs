@@ -52,3 +52,16 @@ Q-Car的扩展积木中有一个"Set the infrared status to (on)"积木可以控
 "digital read pin P5"积木即读取P5引脚的数字量信号0或1，对应其低电平或高电平。而"on start"内的主程序则可以无需改动，这也正是"function"函数积木的好处。
 <div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode15.png" width="100%"></div>
 
+## 4.转速测量
+我们先简单的陈述转速的定义，即物体在单位时间内旋转360°的次数。RPM是一个较常用的转速单位，表示设备每分钟的旋转次数。
+
+我们从直觉上理解，通过计数器统计1分钟Q-Car车轮的编码盘计数值除以12即可得到RPM转速值，但这样显然得到的信息时效性滞后了太多。如果将统计时间缩短到5秒甚至1秒，例如统计1秒Q-Car车轮的编码盘计数值除以12再乘以60，也可得到RPM转速值。
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode20.png" width="100%"></div>
+"running time(ms)"积木的使用方法和前文中计数器间隔100ms输出一次计数值的方法一致，只需改变间隔时间为1000ms即可。
+
+将"call RPM_Measurement_1"积木置入"while true"循环内即可实现间隔1s 从USB串口输出一次RPM转速值。
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode21.png" width="50%"></div>
+条条道路通罗马，测速的方法当然不止这一种，稍微改变一下思路，记录下通过编码盘12个凸柱即车轮旋转一周所花费的时间，60秒(1分钟)除以这个时间，即为RPM转速值。
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode22.png" width="100%"></div>
+将"call RPM_Measurement_2"积木置入"while true"循环内即可实现车轮每旋转一周后从USB串口输出一次RPM转速值。
+<div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode23.png" width="50%"></div>
