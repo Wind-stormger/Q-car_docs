@@ -7,3 +7,6 @@
 我们可以利用"forever"与"on button pressed"积木做出一个简单的按钮计数器。
 
 <div align=center><img src="https://raw.githubusercontent.com/Wind-stormger/Q-car_docs/main/DOCS/picture/screenshot-makecode24.png" width="50%"></div>
+
+这其中设置了一个"A_was_pressed_times"变量，而"change A_was_pressed_times by 1"积木则是使该变量自加1。按下一次按钮A，变量自加1，然后一直循环显示变量值，即记录按钮A按下次数并显示在LED矩阵上。
+
